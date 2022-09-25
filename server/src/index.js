@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const { PORT } = require('./constants');
 
+// Initialize Middlewars
+app.use(express.json());
+
 // Import Routes
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/auth-routes');
 
 // Initialize Routes
 app.use('/api', authRoutes);

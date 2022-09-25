@@ -10,3 +10,11 @@ exports.getUsers = async (req, res) => {
 	}
 	res.status(200).json({ response: rows.rows });
 };
+
+exports.register = async (req, res) => {
+	try {
+		console.log('Valdiation past');
+	} catch (error) {
+		console.log(error.message);
+	}
+};
