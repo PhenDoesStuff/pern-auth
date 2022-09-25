@@ -6,7 +6,9 @@ exports.getUsers = async (req, res) => {
 	try {
 		rows = await db.query('SELECT user_id, email, created_at FROM users');
 	} catch (error) {
-		console.log(error.message);
+		res.status(500).json({
+			error: error.message,
+		});
 	}
 	res.status(200).json({ users: rows.rows });
 };
