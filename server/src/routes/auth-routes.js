@@ -10,6 +10,7 @@ const {
 	register,
 	login,
 	protected,
+	logout,
 } = require('../controllers/auth-controllers');
 
 // Validation Imports
@@ -24,5 +25,6 @@ router.get('/get-users', getUsers);
 router.get('/protected', userAuth, protected);
 router.post('/register', registerValidation, validationMiddleware, register);
 router.post('/login', loginValidation, validationMiddleware, login);
+router.get('/logout', userAuth, logout);
 
 module.exports = router;
