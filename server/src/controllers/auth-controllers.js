@@ -55,12 +55,11 @@ exports.login = async (req, res) => {
 };
 
 exports.protected = async (req, res) => {
-	let rows;
 	try {
+		res.status(200).json({ info: 'Protected Info' });
 	} catch (error) {
 		res.status(500).json({
 			error: error.message,
 		});
 	}
-	res.status(200).json({ info: 'Protected Info' });
 };
